@@ -56,11 +56,17 @@ def async_debug(func):
     return wrapper
 
 
-def repeat(func_, *, n_times=2):
-    pass
-    # @functools.wraps(func)
-    # def wrapper(*args, **kwargs):
-    #     for _ in range(2):
-    #         value = func(*args, **kwargs)
-    #     return value
-    # return wrapper
+def repeat(_func=None, *, n_times=2):
+    def decorator_wrapper(func):
+        @functools.wraps(func)
+        def wrapper(*args, **kwargs):
+            for _ in range(n_times):
+                value = func(*args, **kwargs)
+            return value
+
+        return wrapper
+
+    if _func is None:
+        return decorator_wrapper
+    else:
+        return decorator_wrapper(_func)
