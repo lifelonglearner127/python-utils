@@ -4,18 +4,18 @@ This repository can be used as a starting point for python projects. Pre-commit 
 ### How to use
 - Create a bare clone of the repository.
 	```
-	$ git clone --bare https://github.com/lifelonglearner127/python-template.git
+	git clone --bare https://github.com/lifelonglearner127/python-template.git
 	```
 - Mirror-push to the new repository.
 	```
-	$ cd python-template
-	$ git push --mirror https://github.com/exampleuser/new-repository.git
+	cd python-template
+	git push --mirror https://github.com/exampleuser/new-repository.git
 	```
 
 - Remove the temporary local repository you created earlier.
 	```
-	$ cd ..
-	$ rm -rf python-template
+	cd ..
+	rm -rf python-template
 	```
 
 ### Setup
